@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Parallax Website</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="logo">
+            TRAVEL
+        </a>
+        <nav>
+            <ul>
+
+                <li><a href="{{ url_for('main') }}" class="Active">Home</a></li>
+                <li><a href="{{ url_for('destinations') }}">Destinations</a></li>
+                <li><a href="{{ url_for('transportation') }}">Transportation</a></li>
+                <li><a href="{{ url_for('yourbookings') }}">Your Bookings</a></li>
+              
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2 id="text"><span>What is on your</span><br>Bucket List ?</h2>
+        <img src="static/bird1.png" id="bird1">
+        <img src="static/bird2.png" id="bird2">
+        <img src="static/tree.png" id="tree">
+        <img src="static/forest.png" id="forest">
+
+        <a href="#" id="btn">EXPLORE</a>
+        <img src="static/rocks.png" id="rocks">
+        <img src="static/water.png" id="water">
+    </section>
+    <div class="sec">
+        <h2>Top Picks For You</h2>
+
+        <p class="p1">
+        <div class="background"></div>
+
+        <div class="background-texture"></div>
+
+        <section class="carousel">
+
+            <div class="carousel__container">
+                <div class="carousel-item">
+
+                    <img class="carousel-item__img" src="static/goa.png" alt="people" />
+                    <div class="carousel-item__details">
+                        <div class="controls">
+                            <span class="fas fa-play-circle"></span>
+                            <span class="fas fa-plus-circle"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+
+                    <img class="carousel-item__img" src="static/rajasthan.png" alt="people" />
+                    <div class="carousel-item__details">
+
+                        <div class="controls">
+                            <span class="fas fa-play-circle"></span>
+                            <span class="fas fa-plus-circle"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+
+                    <img class="carousel-item__img" src="static/mumbai.png" alt="people" />
+                    <div class="carousel-item__details">
+                        <div class="controls">
+                            <span class="fas fa-play-circle"></span>
+                            <span class="fas fa-plus-circle"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+
+                    <img class="carousel-item__img" src="static/manali.png" alt="people" />
+                    <div class="carousel-item__details">
+                        <div class="controls">
+                            <span class="fas fa-play-circle"></span>
+                            <span class="fas fa-plus-circle"></span>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+
+
+                    <img class="carousel-item__img" src="static/ladakh.png" alt="people" />
+
+                    <div class="carousel-item__details">
+                        <div class="controls">
+                            <span class="fas fa-play-circle"></span>
+                            <span class="fas fa-plus-circle"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+
+                    <img class="carousel-item__img" src="static/delhi.png" alt="people" />
+                    <div class="carousel-item__details">
+                        <div class="controls">
+                            <span class="fas fa-play-circle"></span>
+                            <span class="fas fa-plus-circle"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="carousel-item__img" src="static/kerala.png" alt="people" />
+                    <div class="carousel-item__details">
+                        <div class="controls">
+                            <span class="fas fa-play-circle"></span>
+                            <span class="fas fa-plus-circle"></span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <a href="{{ url_for('destinations') }}" id="btn1">BOOK NOW</a>
+
+        </section>
+
+        </p>
+        <div class="heading">
+            <h3>Our Services</h3>
+            <p>
+            <div class="our-services">
+                <div>
+                    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> -->
+
+                    <img src="{{url_for('static', filename='island.png')}}" class="servicesisland">
+
+                    <img src="{{url_for('static', filename='hotel.png')}}" class="serviceshotel">
+                    <img src="{{url_for('static', filename='world.png')}}" class="servicesworld">
+                    </head>
+
+                    <body>
+                        <div class="wrapper">
+                            <div class="container">
+
+                                <i class='bx bxs-landscape'></i>
+                                <span class="num" data-val="1000">000</span>
+                                <span class="text">Destinations visited</span>
+
+
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="wrapper2">
+            <div class="container2">
+                <i class='bx bxs-landscape'></i>
+                <span class="num" data-val="1200">000</span>
+                <span class="text">Hotels Booked</span>
+            </div>
+        </div>
+        <div class="wrapper3">
+            <div class="container3">
+                <i class='bx bxs-landscape'></i>
+                <span class="num" data-val="900">000</span>
+                <span class="text">Transportations</span>
+            </div>
+        </div>
+        </p>
+
+        <script>
+            let text = document.getElementById('text')
+            let bird1 = document.getElementById('bird1')
+            let bird2 = document.getElementById('bird2')
+            let btn = document.getElementById('btn')
+            let rocks = document.getElementById('rocks')
+            let tree = document.getElementById('tree')
+            let forest = document.getElementById('forest')
+            let water = document.getElementById('water')
+            let header = document.getElementById('header')
+            let treeLeft = document.getElementById('tree-left')
+            let treeRight = document.getElementById('tree-right')
+
+
+            window.addEventListener('scroll', function () {
+                let value = window.scrollY;
+
+                text.style.top = 35 + value * -0.15 + '%';
+                bird1.style.top = value * -1.5 + 'px';
+                bird1.style.left = value * 2 + 'px';
+                bird2.style.top = value * -1.5 + 'px';
+                bird2.style.left = value * -5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                rocks.style.top = value * -0.12 + 'px';
+                tree.style.top = value * -0.25 + 'px';
+                forest.style.top = value * 0.25 + 'px';
+                header.style.top = value * 0.5 + 'px';
+                treeLeft.style.left = value * -1.5 + 'px'
+                treeRight.style.left = value * 1.5 + 'px'
+                treeLeft.style.top = value * -1.5 + 'px'
+                treeRight.style.top = value * -1.5 + 'px'
+
+            })
+
+            var scrollButton = document.getElementById('btn');
+            var scrollLimit = 750;
+            var scrollDuration = 1000;
+
+            scrollButton.addEventListener('click', function () {
+                var startTime = Date.now();
+                var startY = window.scrollY;
+                var endY = Math.min(startY + scrollLimit, document.body.scrollHeight - window.innerHeight);
+
+                var scroll = setInterval(function () {
+                    var elapsed = Date.now() - startTime;
+                    var progress = elapsed / scrollDuration;
+                    var newY = startY + (endY - startY) * easeInOutQuad(progress);
+                    window.scrollTo(0, newY);
+                    if (progress >= 1) clearInterval(scroll);
+                }, 15);
+            });
+
+            function easeInOutQuad(x) {
+                return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+            }
+
+            var scrollButton2 = document.getElementById('more');
+            var scrollLimit2 = 850;
+            var scrollDuration2 = 1500;
+
+            function animateValueDisplays() {
+                let valueDisplays = document.querySelectorAll(".num");
+                let interval = 5000;
+                valueDisplays.forEach((valueDisplay) => {
+                    let startValue = 0;
+                    let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+                    let duration = Math.floor(interval / endValue);
+                    let counter = setInterval(function () {
+                        startValue += 1;
+                        valueDisplay.textContent = startValue;
+                        if (startValue == endValue) {
+                            clearInterval(counter);
+                        }
+                    });
+                });
+            }
+
+            animateValueDisplays(); // call the function initially to animate the values on page load
+
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                let documentHeight = document.body.scrollHeight;
+                if (scrollTop + windowHeight >= documentHeight) {
+                    animateValueDisplays();
+                }
+            });
+
+        </script>
+</body>
+
+</html>

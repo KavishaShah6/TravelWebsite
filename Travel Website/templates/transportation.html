@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Transportation Services</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #nav {
+            align-items: right;
+            top: 0;
+            right: -650px;
+            position: relative;
+        }
+
+        #header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: right;
+            z-index: 10000;
+        }
+
+        #header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #header ul li {
+            list-style: none;
+            margin-left: 10px;
+        }
+
+        #header ul li a {
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            padding: 6px 15px;
+            color: #24ada3;
+            font-weight: 120px;
+            border-radius: 20px;
+            transition: background 0.5s;
+        }
+
+        #header ul li a:hover {
+            background: #112b40;
+            color: #fff;
+        }
+
+        #header ul li a.Active {
+            background: #112b40;
+            color: #fff;
+        }
+
+        /* Section Styles */
+        section {
+            position: relative;
+            height: 500px;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        #text {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+
+        /* Service Section Styles */
+        .sec {
+            background-color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .sec h2 {
+            color: #333;
+        }
+
+        .service-details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .service {
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+        }
+
+        .service img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="logo">
+            TRAVEL
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('main') }}" class="Active">Home</a></li>
+                <li><a href="{{ url_for('destinations') }}">Destinations</a></li>
+                <li><a href="{{ url_for('transportation') }}" class="Active">Transportation</a></li>
+                <li><a href="{{ url_for('yourbookings') }}">Your Bookings</a></li>
+            
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2 id="text"><span>Discover Convenient</span><br>Transportation Services</h2>
+
+    </section>
+
+    <div class="sec">
+        <h2>Our Transportation Services</h2>
+        <p>
+            Experience comfortable and reliable transportation services tailored for your travel needs. Whether you're
+            exploring a new city or embarking on an adventurous journey, our transportation services ensure a seamless
+            and enjoyable travel experience.
+        </p>
+        <div class="service-details">
+            <div class="service">
+                <img src="static/bus-icon.png" alt="Bus Icon">
+                <h3>Bus Services</h3>
+                <p>Explore the beauty of your destination with our convenient and affordable bus services. Comfortable
+                    seating and scenic routes guaranteed.</p>
+            </div>
+
+            <div class="service">
+                <img src="static/train-icon.png" alt="Train Icon">
+                <h3>Train Services</h3>
+                <p>Embark on a smooth and efficient journey with our train services. Comfortable seats and on-time
+                    departures for a stress-free travel experience.</p>
+            </div>
+            <div class="service">
+                <img src="static/taxi-icon.png" alt="Taxi Icon">
+                <h3>Taxi Services</h3>
+                <p>Get a taxi on demand for quick and easy travel within the city. Reliable and convenient taxi services
+                    at your fingertips.</p>
+            </div>
+            <div class="service">
+                <img src="static/flight-icon.png" alt="Flight Icon">
+                <h3>Flight Services</h3>
+                <p>Reach your destination quickly and comfortably with our flight services. Explore the world with
+                    convenience and style.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll animation for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

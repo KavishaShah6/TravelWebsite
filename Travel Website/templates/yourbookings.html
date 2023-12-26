@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>Your Bookings</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient( #f6ece3, #24ada3, #66b5b0, #a3c4df);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        #nav {
+            align-items: right;
+            top: 0;
+            right: -650px;
+            position: relative;
+        }
+
+        #header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: right;
+            z-index: 10000;
+        }
+
+        #header ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #header ul li {
+            list-style: none;
+            margin-left: 10px;
+        }
+
+        #header ul li a {
+            text-decoration: none;
+            padding: 6px 15px;
+            color: #24ada3;
+            border-radius: 20px;
+            transition: background 0.5s;
+        }
+
+        #header ul li a:hover {
+            background: #112b40;
+            color: #fff;
+        }
+
+        #header ul li a.Active {
+            background: #112b40;
+            color: #fff;
+        }
+
+        /* Section Styles */
+        section {
+            position: relative;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Booking Details Section */
+        .booking-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .booking-item {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s;
+            position: relative;
+            align-items: center;
+            text-align: left; /* Align text to the left */
+        }
+
+        .booking-item:hover {
+            transform: scale(1.05);
+        }
+
+        .booking-item h3 {
+            color: #333;
+        }
+
+        .status-btn {
+            background-color: #24ada3;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .booking-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="logo">
+            TRAVEL
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('main') }}">Home</a></li>
+                <li><a href="{{ url_for('destinations') }}">Destinations</a></li>
+                <li><a href="{{ url_for('transportation') }}">Transportation</a></li>
+                <li><a href="{{ url_for('yourbookings') }}" class="Active">Your Bookings</a></li>
+              
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Your Bookings</h2>
+        <p>
+            View details of your upcoming and past bookings. Manage your travel plans conveniently.
+        </p>
+        <div class="booking-details">
+            <div class="booking-item">
+        
+                <h3>Booking #1</h3>
+                <p>Date: January 15, 2023</p>
+                <p>Destination: Greece</p>
+                <p>Status: <span id="status1">Confirmed</span></p>
+                <button class="status-btn" onclick="toggleStatus('status1')">Toggle Status</button>
+            </div>
+            <div class="booking-item">
+                
+                <h3>Booking #2</h3>
+                <p>Date: February 20, 2023</p>
+                <p>Destination: New Zealand</p>
+                <p>Status: <span id="status2">Pending</span></p>
+                <button class="status-btn" onclick="toggleStatus('status2')">Toggle Status</button>
+            </div>
+            <!-- Add more booking items as needed -->
+        </div>
+    </section>
+
+    <script>
+        function toggleStatus(elementId) {
+            var statusElement = document.getElementById(elementId);
+            if (statusElement.innerHTML === 'Confirmed') {
+                statusElement.innerHTML = 'Pending';
+            } else {
+                statusElement.innerHTML = 'Confirmed';
+            }
+        }
+    </script>
+</body>
+
+</html>
